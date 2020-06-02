@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="AndroidScreenMonitor:jar">
+    <output-path>$PROJECT_DIR$/classes/artifacts/AndroidScreenMonitor_jar</output-path>
+    <root id="archive" name="AndroidScreenMonitor.jar">
+      <element id="module-output" name="AndroidScreenMonitor" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/libs/guava-13.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/libs/chimpchat-24.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/libs/ddmlib-26.0.0-dev.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

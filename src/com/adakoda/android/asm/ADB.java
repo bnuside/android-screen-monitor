@@ -67,7 +67,7 @@ public class ADB {
 
 		if (success) {
 			int count = 0;
-			while (mAndroidDebugBridge.hasInitialDeviceList() == false) {
+			while (!mAndroidDebugBridge.hasInitialDeviceList()) {
 				try {
 					Thread.sleep(100);
 					count++;

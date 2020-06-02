@@ -21,16 +21,7 @@ import java.awt.Image;
 import java.awt.Insets;
 import java.awt.Point;
 import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.InputEvent;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
+import java.awt.event.*;
 import java.awt.geom.AffineTransform;
 import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
@@ -263,6 +254,7 @@ public class MainFrame extends JFrame {
 		addMouseListener(mMouseListener);
 		addWindowListener(mWindowListener);
 		addMouseMotionListener(mMouseMotionListener);
+		addMouseWheelListener(mMouseWheelListener);
 		addKeyListener(mKeyListener);
 
 		pack();
@@ -401,9 +393,12 @@ public class MainFrame extends JFrame {
 
 		addRadioButtonMenuItemZoom(menuZoom, buttonGroup, 0.1, "10%", -1, mZoom);
 		addRadioButtonMenuItemZoom(menuZoom, buttonGroup, 0.25, "25%", -1, mZoom);
+		addRadioButtonMenuItemZoom(menuZoom, buttonGroup, 0.30, "30%", -1, mZoom);
+		addRadioButtonMenuItemZoom(menuZoom, buttonGroup, 0.40, "40%", -1, mZoom);
 		addRadioButtonMenuItemZoom(menuZoom, buttonGroup, 0.5, "50%", KeyEvent.VK_5, mZoom);
 		addRadioButtonMenuItemZoom(menuZoom, buttonGroup, 0.75, "75%", KeyEvent.VK_7, mZoom);
 		addRadioButtonMenuItemZoom(menuZoom, buttonGroup, 1.0, "100%", KeyEvent.VK_1, mZoom);
+		addRadioButtonMenuItemZoom(menuZoom, buttonGroup, 1.2, "120%", -1, mZoom);
 		addRadioButtonMenuItemZoom(menuZoom, buttonGroup, 1.5, "150%", KeyEvent.VK_0, mZoom);
 		addRadioButtonMenuItemZoom(menuZoom, buttonGroup, 2.0, "200%", KeyEvent.VK_2, mZoom);
 	}
@@ -645,6 +640,12 @@ public class MainFrame extends JFrame {
 				mPopupMenu.show(e.getComponent(), e.getX(), e.getY());
 			}
 		}
+	};
+
+	private MouseWheelListener mMouseWheelListener = new MouseWheelListener() {
+		@Override
+		public void mouseWheelMoved(MouseWheelEvent e) {}
+
 	};
 
 	private WindowListener mWindowListener = new WindowListener() {

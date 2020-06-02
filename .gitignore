@@ -10,3 +10,5 @@
 
 # Eclipse
 /bin
+*.log
+/classes
